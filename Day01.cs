@@ -7,8 +7,8 @@ namespace Day01
     {
         static void Main(string[] args)
         {
-            int[] input = Data.ToIntArray("D:/AoC/Data/01.txt", '\n');
-
+            int[] input = Data.ToIntArray("D:/AoC/Data/01.txt");
+           
             Console.WriteLine(Part01(input)); 
             Console.WriteLine(Part02(input));
 
@@ -16,25 +16,25 @@ namespace Day01
 
         static int Part01(int[] input)
         {
-            int increased = 0;
+            int deeperDepthCount = 0;
             for (int i = 1; i < input.Length; i++)
             {
-                if (input[i - 1] < input[i]) increased++;
+                if (input[i - 1] < input[i]) deeperDepthCount++;
             }
-            return increased;
+            return deeperDepthCount;
         }
 
         static int Part02(int[] input)
         {
-            int increased = 0;
+            int deeperDepthCount = 0;
             for (int i = 1; i < input.Length - 2; i++)
             {
                 var previous = input[i - 1] + input[i] + input[i + 1];
                 var current = input[i] + input[i + 1] + input[i + 2];
 
-                if (previous < current) increased++;
+                if (previous < current) deeperDepthCount++;
             }
-            return increased;
+            return deeperDepthCount;
         }
     }
 }
