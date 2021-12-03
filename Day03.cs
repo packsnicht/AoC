@@ -58,8 +58,8 @@ namespace Day03
        
         static int Part02(List<string> input)
         {
-            List<string> oxigenGeneratorRatings = new List<string>(input);
-            List<string> co2ScrubberRatings = new List<string>(input);
+            List<string> oxigenGeneratorRatings = input;
+            List<string> co2ScrubberRatings = input;
 
             for (int position = 0; position < input[0].Length; position++)
             {
