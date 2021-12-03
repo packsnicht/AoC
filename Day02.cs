@@ -24,8 +24,6 @@ namespace Day02
 
             for (int i = 0; i < input.Length; i++)
             {
-                if (string.IsNullOrEmpty(input[i])) continue;
-
                 switch (input[i].Substring(0, 1))
                 {
                     case "u": verticalDisplacement -= int.Parse(input[i].Substring(input[i].Length - 2));
@@ -49,8 +47,6 @@ namespace Day02
 
             for (int i = 0; i < input.Length; i++)
             {
-                if (string.IsNullOrEmpty(input[i])) continue;
-
                 switch (input[i].Substring(0, 1))
                 {
                     case "u": aim -= int.Parse(input[i].Substring(input[i].Length - 2));
@@ -82,8 +78,6 @@ namespace Day02
 
             for (int i = 0; i < input.Length; i++)
             {
-                if (string.IsNullOrEmpty(input[i])) continue;
-
                 string[] command = input[i].Split(" ");
 
                 (int h, int v) = instructions[command[0]](command[1]);
@@ -102,8 +96,6 @@ namespace Day02
 
             for (int i = 0; i < input.Length; i++)
             {
-                if (string.IsNullOrEmpty(input[i])) continue;
-
                 string[] command = input[i].Split(" ");
 
                 (int h, int a) = instructions[command[0]](command[1]);
