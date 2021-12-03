@@ -7,8 +7,7 @@ namespace Util
     {
         public static string[] ToStringArray(string file, char delimiter = '\n')
         {
-            return File.ReadAllText(file)
-                .Split(delimiter);
+            return File.ReadAllText(file).Split(delimiter).Where(x => !string.IsNullOrEmpty(x)).ToArray();
         }
         public static int[] ToIntArray(string file, char delimiter = '\n')
         {
