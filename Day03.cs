@@ -20,8 +20,6 @@ namespace Day03
 
             for (int row = 0; row < input.Count; row++)
             {
-                if (string.IsNullOrEmpty(input[row])) continue;
-
                 setBits += input[row].Substring(position, 1) == "1" ? 1 : 0;
             }
 
@@ -65,7 +63,7 @@ namespace Day03
 
             for (int position = 0; position < input[0].Length; position++)
             {
-                string oxigenGeneratorBitToLookFor = CountSetBitsInPosition(oxigenGeneratorRatings, position) >= oxigenGeneratorRatings.Count * 0.5 ? "1" : "0";
+                string oxigenGeneratorBitToLookFor = CountSetBitsInPosition(oxigenGeneratorRatings, position) >= oxigenGeneratorRatings.Count * 0.5f ? "1" : "0";
 
                 for (int i = oxigenGeneratorRatings.Count - 1; i >= 0; i--)
                 {
@@ -73,7 +71,7 @@ namespace Day03
                     if (!oxigenGeneratorRatings[i].Substring(position, 1).Equals(oxigenGeneratorBitToLookFor)) oxigenGeneratorRatings.RemoveAt(i);
                 }
 
-                string co2ScrubberBitToLookFor = CountSetBitsInPosition(co2ScrubberRatings, position) >= co2ScrubberRatings.Count * 0.5 ? "0" : "1";
+                string co2ScrubberBitToLookFor = CountSetBitsInPosition(co2ScrubberRatings, position) >= co2ScrubberRatings.Count * 0.5f ? "0" : "1";
 
                 for (int i = co2ScrubberRatings.Count - 1; i >= 0; i--)
                 {
