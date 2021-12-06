@@ -11,7 +11,6 @@ namespace Day06
             int[] input = Data.ToIntArray("D:/AoC/Data/06.txt", ',');
 
             long[] fish = new long[9];
-            fish.Initialize();
             for (int i = 0; i < input.Length; i++)
             {
                 fish[input[i]]++;
