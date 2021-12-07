@@ -13,9 +13,9 @@ namespace Day07
             var min = input.Min();
             var max = input.Max();
             var distances = Enumerable.Range(min, max - min);
-            var costs = distances.Select(d => input.Select(i => Math.Abs(d - i)));
-            var part01 = costs.Select(c => c.Sum()).Min();
-            var part02 = costs.Select(c => c.Select(i => i * (i + 1) / 2).Sum()).Min();
+            var costs = distances.Select(distance => input.Select(position => Math.Abs(distance - position)));
+            var part01 = costs.Select(cost => cost.Sum()).Min();
+            var part02 = costs.Select(cost => cost.Select(baseCost => baseCost * (baseCost + 1) / 2).Sum()).Min();
 
             Console.WriteLine($"{part01}\n{part02}");
         }
